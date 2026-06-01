@@ -1,4 +1,4 @@
 function showMessage() {
   document.getElementById("message").innerHTML =
-    "Mum, you are loved more than words can ever explain. Happy Birthday, my queen 👑❤️";
+    "Mum ❤️ You are my greatest blessing, my first teacher, and my forever hero. Happy Birthday, my queen 👑";
 }
