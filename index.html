@@ -8,14 +8,9 @@
 </head>
 <body>
 
-    <!-- Animated butterflies -->
     <div class="butterflies">
-        <span>🦋</span>
-        <span>🦋</span>
-        <span>🦋</span>
-        <span>🦋</span>
-        <span>🦋</span>
-        <span>🦋</span>
+        <span>🦋</span><span>🦋</span><span>🦋</span>
+        <span>🦋</span><span>🦋</span><span>🦋</span>
     </div>
 
     <div class="card">
@@ -45,13 +40,16 @@
             You deserve the world and more.
         </p>
 
-        <a href="surprise.html" class="surprise-btn surprise-link">
-    ✨ Open Your Magical Surprise ✨
-</a>
-
-       
+        <button onclick="showMessage()" class="surprise-btn fade delay5">Read A Secret Message</button>
+        
+        <div id="message"></div>
+        <br>
+        
+        <a href="surprise.html" class="surprise-btn surprise-link fade delay5">
+            ✨ Open Your Magical Surprise ✨
+        </a>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
