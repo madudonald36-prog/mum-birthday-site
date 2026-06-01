@@ -1,261 +1,65 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  min-height: 100vh;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background:
-    radial-gradient(circle at top left, #ffd1dc, transparent 35%),
-    radial-gradient(circle at bottom right, #fff0b3, transparent 35%),
-    linear-gradient(135deg, #fff5f7, #ffe6ec);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  overflow-x: hidden;
-  position: relative;
-}
-
-.card {
-  width: 100%;
-  max-width: 760px;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 50px 40px;
-  border-radius: 32px;
-  box-shadow: 0 30px 80px rgba(150, 20, 60, 0.28);
-  text-align: center;
-  border: 2px solid #ffd6e3;
-  animation: cardFloat 4s ease-in-out infinite;
-  position: relative;
-  z-index: 2;
-  backdrop-filter: blur(8px);
-}
-
-.heart {
-  font-size: 58px;
-  margin-bottom: 15px;
-  animation: pulse 1.3s infinite;
-}
-
-h1 {
-  color: #9b1235;
-  font-size: 48px;
-  margin-bottom: 25px;
-}
-
-.glow-text {
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-p {
-  color: #333;
-  font-size: 19px;
-  line-height: 1.8;
-  margin-bottom: 18px;
-}
-
-.fade-text {
-  opacity: 0;
-  animation: fadeUp 1s ease forwards;
-}
-
-.delay1 { animation-delay: 0.4s; }
-.delay2 { animation-delay: 0.8s; }
-.delay3 { animation-delay: 1.2s; }
-.delay4 { animation-delay: 1.6s; }
-.delay5 { animation-delay: 2s; }
-
-.surprise-btn {
-  margin-top: 25px;
-  background: linear-gradient(135deg, #ff006e, #ff5c8a, #ffbe0b);
-  background-size: 250% 250%;
-  color: white;
-  border: none;
-  padding: 18px 38px;
-  border-radius: 999px;
-  font-size: 19px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 25px rgba(255, 0, 110, 0.55);
-  animation: buttonGlow 2s infinite, gradientMove 3s infinite;
-  transition: 0.3s ease;
-}
-
-.surprise-btn:hover {
-  transform: scale(1.12) rotate(-1deg);
-  box-shadow: 0 0 45px rgba(255, 0, 110, 0.9);
-}
-
-#message {
-  margin-top: 30px;
-  color: #9b1235;
-  font-size: 23px;
-  font-weight: bold;
-  line-height: 1.7;
-  min-height: 40px;
-}
-
-.magic-message {
-  animation: popIn 0.8s ease, rainbowGlow 2s infinite alternate;
-}
-
-/* Butterflies */
 .butterflies span {
   position: fixed;
-  bottom: -60px;
-  font-size: 34px;
+  bottom: -80px;
+  font-size: 40px;
   z-index: 1;
-  animation: fly 12s linear infinite;
-  opacity: 0.8;
+  animation-name: fly;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .butterflies span:nth-child(1) {
-  left: 8%;
+  left: 10%;
+  animation-duration: 8s;
   animation-delay: 0s;
-  animation-duration: 11s;
 }
 
 .butterflies span:nth-child(2) {
-  left: 22%;
+  left: 25%;
+  animation-duration: 10s;
   animation-delay: 2s;
-  animation-duration: 14s;
 }
 
 .butterflies span:nth-child(3) {
-  left: 40%;
-  animation-delay: 4s;
-  animation-duration: 12s;
+  left: 45%;
+  animation-duration: 9s;
+  animation-delay: 1s;
 }
 
 .butterflies span:nth-child(4) {
-  left: 58%;
-  animation-delay: 1s;
-  animation-duration: 15s;
+  left: 60%;
+  animation-duration: 11s;
+  animation-delay: 3s;
 }
 
 .butterflies span:nth-child(5) {
-  left: 76%;
-  animation-delay: 3s;
-  animation-duration: 13s;
+  left: 75%;
+  animation-duration: 10s;
+  animation-delay: 1.5s;
 }
 
 .butterflies span:nth-child(6) {
   left: 90%;
-  animation-delay: 5s;
-  animation-duration: 16s;
+  animation-duration: 12s;
+  animation-delay: 4s;
 }
 
 @keyframes fly {
   0% {
-    transform: translateY(0) translateX(0) rotate(0deg) scale(0.8);
+    transform: translateY(0) translateX(0) rotate(0deg);
     opacity: 0;
   }
 
   10% {
-    opacity: 0.9;
-  }
-
-  50% {
-    transform: translateY(-55vh) translateX(70px) rotate(25deg) scale(1.2);
-  }
-
-  100% {
-    transform: translateY(-115vh) translateX(-70px) rotate(-25deg) scale(0.9);
-    opacity: 0;
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-
-  to {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 8px rgba(255, 92, 138, 0.4);
-  }
-
-  to {
-    text-shadow: 0 0 20px rgba(255, 0, 110, 0.8);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
   }
 
   50% {
-    transform: scale(1.25);
-  }
-}
-
-@keyframes cardFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes buttonGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 0, 110, 0.45);
-  }
-
-  50% {
-    box-shadow: 0 0 45px rgba(255, 0, 110, 0.9);
-  }
-}
-
-@keyframes gradientMove {
-  0% {
-    background-position: left;
-  }
-
-  50% {
-    background-position: right;
+    transform: translateY(-55vh) translateX(80px) rotate(30deg);
   }
 
   100% {
-    background-position: left;
-  }
-}
-
-@keyframes popIn {
-  0% {
+    transform: translateY(-120vh) translateX(-80px) rotate(-30deg);
     opacity: 0;
-    transform: scale(0.4);
-  }
-
-  70% {
-    transform: scale(1.12);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes rainbowGlow {
-  from {
-    text-shadow: 0 0 10px #ff5c8a;
-  }
-
-  to {
-    text-shadow: 0 0 22px #ffbe0b;
   }
 }
