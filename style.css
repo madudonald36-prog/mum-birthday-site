@@ -67,3 +67,94 @@
     display: inline-block;
     text-decoration: none;
 }
+
+.surprise-page {
+    background:
+        radial-gradient(circle at center, #fff2a8, transparent 20%),
+        radial-gradient(circle at top left, #ffb3c6, transparent 30%),
+        radial-gradient(circle at bottom right, #ffd166, transparent 35%),
+        linear-gradient(135deg, #ff4d6d, #ffccd5, #fff0f3);
+}
+
+.surprise-card {
+    animation: surprisePop 1.2s ease forwards, floatCard 5s ease-in-out infinite 1.2s;
+}
+
+.superwoman-title {
+    font-size: 55px;
+    color: #b00045;
+    margin-bottom: 25px;
+    animation: superGlow 1.5s ease-in-out infinite alternate;
+}
+
+.birthday-explosion span {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: 42px;
+    z-index: 3;
+    animation: explode 2.5s ease-out infinite;
+}
+
+.birthday-explosion span:nth-child(1) { animation-delay: 0s; }
+.birthday-explosion span:nth-child(2) { animation-delay: 0.1s; }
+.birthday-explosion span:nth-child(3) { animation-delay: 0.2s; }
+.birthday-explosion span:nth-child(4) { animation-delay: 0.3s; }
+.birthday-explosion span:nth-child(5) { animation-delay: 0.4s; }
+.birthday-explosion span:nth-child(6) { animation-delay: 0.5s; }
+.birthday-explosion span:nth-child(7) { animation-delay: 0.6s; }
+.birthday-explosion span:nth-child(8) { animation-delay: 0.7s; }
+.birthday-explosion span:nth-child(9) { animation-delay: 0.8s; }
+.birthday-explosion span:nth-child(10) { animation-delay: 0.9s; }
+
+@keyframes explode {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(
+            calc(-50% + var(--x, 200px)),
+            calc(-50% + var(--y, -200px))
+        ) scale(1.5) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.birthday-explosion span:nth-child(1) { --x: -300px; --y: -220px; }
+.birthday-explosion span:nth-child(2) { --x: 300px; --y: -220px; }
+.birthday-explosion span:nth-child(3) { --x: -250px; --y: 180px; }
+.birthday-explosion span:nth-child(4) { --x: 250px; --y: 180px; }
+.birthday-explosion span:nth-child(5) { --x: 0px; --y: -300px; }
+.birthday-explosion span:nth-child(6) { --x: 0px; --y: 250px; }
+.birthday-explosion span:nth-child(7) { --x: -380px; --y: 0px; }
+.birthday-explosion span:nth-child(8) { --x: 380px; --y: 0px; }
+.birthday-explosion span:nth-child(9) { --x: -180px; --y: -320px; }
+.birthday-explosion span:nth-child(10) { --x: 180px; --y: -320px; }
+
+@keyframes surprisePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.4) rotate(-8deg);
+    }
+
+    70% {
+        transform: scale(1.08) rotate(2deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes superGlow {
+    from {
+        text-shadow: 0 0 15px #ff8fab;
+    }
+
+    to {
+        text-shadow: 0 0 40px #ff006e, 0 0 70px #ffbe0b;
+    }
+}
