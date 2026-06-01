@@ -6,6 +6,7 @@ function showMessage() {
 
   message.classList.remove("magic-message");
 
+  // Forces the browser to reflow, allowing the CSS animation to trigger again
   void message.offsetWidth;
 
   message.classList.add("magic-message");
